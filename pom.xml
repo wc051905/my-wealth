@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wc</groupId>
+    <artifactId>wc</artifactId>
+    <version>4.7.3</version>
+
+    <name>wc</name>
+    <url>http://www.ait.vip</url>
+    <description>中国前瞻数字研发中心人事管理系统</description>
+
+    <properties>
+        <ait.version>4.7.3</ait.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+        <shiro.version>1.8.0</shiro.version>
+        <thymeleaf.extras.shiro.version>2.1.0</thymeleaf.extras.shiro.version>
+        <druid.version>1.2.8</druid.version>
+        <bitwalker.version>1.21</bitwalker.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <swagger.version>3.0.0</swagger.version>
+        <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
+        <pagehelper.boot.version>1.4.1</pagehelper.boot.version>
+        <fastjson.version>1.2.79</fastjson.version>
+        <oshi.version>6.1.2</oshi.version>
+        <jna.version>5.10.0</jna.version>
+        <commons.io.version>2.11.0</commons.io.version>
+        <commons.fileupload.version>1.4</commons.fileupload.version>
+        <poi.version>4.1.2</poi.version>
+        <velocity.version>2.3</velocity.version>
+        <lombok.version>1.16.14</lombok.version>
+        <hutool.version>5.4.2</hutool.version>
+        <activiti.version>6.0.0</activiti.version>
+        <logback.version>1.2.9</logback.version>
+        <!--<jimureport.version>1.4.2</jimureport.version>-->
+        <sqlserver.version>9.4.0.jre8</sqlserver.version>
+    </properties>
+
+    <!-- 依赖声明 -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.5.10</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- 验证码 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!-- Shiro核心框架 -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+
+            <!-- Shiro使用Spring框架 -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+
+            <!-- Shiro使用EhCache缓存框架 -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+
+            <!-- thymeleaf模板引擎和shiro框架的整合 -->
+            <dependency>
+                <groupId>com.github.theborakompanioni</groupId>
+                <artifactId>thymeleaf-extras-shiro</artifactId>
+                <version>${thymeleaf.extras.shiro.version}</version>
+            </dependency>
+
+            <!-- 解析客户端操作系统、浏览器等 -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${bitwalker.version}</version>
+            </dependency>
+
+            <!-- SpringBoot集成mybatis框架 -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+
+            <!-- pagehelper 分页插件 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+            <!-- 获取系统信息 -->
+            <dependency>
+                <groupId>com.github.oshi</groupId>
+                <artifactId>oshi-core</artifactId>
+                <version>${oshi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna-platform</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+
+
+            <!-- io常用工具类 -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- 文件上传工具类 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons.fileupload.version}</version>
+            </dependency>
+
+            <!-- excel工具 -->
+            <!--<dependency>
+                <groupId>org.jxls</groupId>
+                <artifactId>jxls-jexcel</artifactId>
+                <version>1.0.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jxls</groupId>
+                <artifactId>jxls-poi</artifactId>
+                <version>1.0.14</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jxls</groupId>
+                <artifactId>jxls</artifactId>
+                <version>2.4.4</version>
+            </dependency>-->
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- velocity代码生成使用模板 -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- 阿里JSON解析器 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>mssql-jdbc</artifactId>
+                <version>${sqlserver.version}</version>
+            </dependency>
+
+            <!--积木报表-->
+            <!--<dependency>
+                <groupId>org.jeecgframework.jimureport</groupId>
+                <artifactId>jimureport-spring-boot-starter</artifactId>
+                <version>${jimureport.version}</version>
+            </dependency>-->
+
+            <!-- 定时任务-->
+            <!--<dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-quartz</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; 代码生成&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-generator</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; 核心模块&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-framework</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; 系统模块&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-system</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; 通用工具&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-common</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; 工具类&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-tool</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; ess&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-ess</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; att&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-att</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; mss&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-mss</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; ga&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-ga</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; activiti&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-activiti</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; org&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-org</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            &lt;!&ndash; hr&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-hr</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+            &lt;!&ndash; edu&ndash;&gt;
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-edu</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-quest</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-eva</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-pa</artifactId>
+                <version>${ait.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ait</groupId>
+                <artifactId>ait-mail</artifactId>
+                <version>${ait.version}</version>
+            </dependency>-->
+
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>wealth-admin</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+           <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>-->
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

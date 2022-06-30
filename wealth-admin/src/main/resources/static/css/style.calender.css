@@ -1,0 +1,20 @@
+.f-btn-jian{height: 40px;line-height: 40px;font-size: 14px;text-align: center;width: 20%;color: #666;cursor: pointer;float: left;}
+.f-btn-jia{height: 40px;line-height: 40px;font-size: 14px;text-align: center;width: 20%;color: #666;cursor: pointer;float:right;}
+.f-riqi{width: 60%;color: #666;font-size: 14px;text-align: center;height: 40px;line-height: 40px;float:left;}
+.f-rili-table tbody td{background: #fff;position: relative;}
+.f-rili-table .f-today{background-color: #faf1de;}
+.f-rili-table .f-have{background-color:#999;color: #fff;}
+.f-rili-table .f-on{background-color:cornflowerblue;color: #fff;}
+.f-number{cursor: pointer;}
+.f-rili-table{width: 100%;}
+.f-rili-th{float: left;width: 14.25%;text-align: center;line-height: 40px;height: 40px; color: #333; }
+.f-td{float: left;width: 14.25%;text-align: center;height:40px;line-height: 40px;position: relative;}
+.f-yuan{position: absolute;width: 20px;height: 20px;top: 13px;left: 50%;margin-left: 10px; background: url(../images/yuan.png) no-repeat center;}
+.f-table-msg{position: absolute;z-index: 2;top: 34px;left:50%;margin-left: -120px; width: 280px;background: url(../images/bg-msg.png) no-repeat bottom;line-height: 55px;height: 46px;text-align: center;display: none;color: #666;}
+label{text-align: left !important;}
+
+.f-btn-jian-b{height: 40px;line-height: 40px;font-size: 14px;text-align: center;width: 20%;color: #666;cursor: pointer;float: left;}
+.f-btn-jia-b{height: 40px;line-height: 40px;font-size: 14px;text-align: center;width: 20%;color: #666;cursor: pointer;float:right;}
+.f-riqi-b{width: 60%;color: #666;font-size: 14px;text-align: center;height: 40px;line-height: 40px;float:left;}
+.f-last-day,.f-day,.f-next-day{height: 60%;width: 100%}
+.f-last-type,.f-type,.f-next-type{height: 38%;width: 100%}

@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  datasource:
+    url: jdbc:mysql://192.144.236.105:3306/hmtc_prod_20220609?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+    username: ait_soft
+    password: Bjait@20220301
